@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from IndexApp.models import ContactForm
 # Create your views here.
 
 def Index(request):
@@ -27,15 +27,6 @@ def Portfolio(request):
     }
     return render(request,'portfolio.html', context)
 
-def Pricing(request):
-    context={  
-    }
-    return render(request,'pricing.html', context)
-
-def Blog(request):
-    context={  
-    }
-    return render(request,'blog.html', context)
 
 def Testimonial(request):
     context={  
@@ -43,6 +34,27 @@ def Testimonial(request):
     return render(request,'testimonial.html', context)
 
 def Contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        
+        obj=ContactForm(name=name,email=email,subject=subject,message=message)
+        obj.save()
+        
     context={  
     }
     return render(request,'contact.html', context)
+
+
+
+def Login(request):
+    context={  
+    }
+    return render(request,'login.html', context)
+
+def Register(request):
+    context={  
+    }
+    return render(request,'register.html', context)

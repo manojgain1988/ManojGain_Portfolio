@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+ {% load static %}
+
+ {% block title %}
+  Login
+ {% endblock title %}
+
+  <main id="main">
+
+    {% block content %}
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Login</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Login</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= login Section ======= -->
+    <section id="login" class="login">
+      {% comment %} <div class="container" data-aos="fade-up"> {% endcomment %}
+
+        <form action="{% url 'login' %}" method="POST" class="col-md-6 m-auto">
+          {% csrf_token %}
+          <div class="section-title">
+            <h3>Login Your Account</h3>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="Your Email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Your Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
+          </div>
+          <button type="submit" class="btn btn-success  w-100 mb-5">Login</button>
+        </form>
+        
+      
+
+    {% endblock content %}
+
+  </main><!-- End #main -->

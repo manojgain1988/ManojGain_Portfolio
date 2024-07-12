@@ -48,7 +48,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html"><span>BM</span>King</a></h1>
+      <h1 class="logo me-auto"><a href="{% url 'index' %}"><span>BM</span>King</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{%static 'assets/img/logo.png'%}" alt="" class="img-fluid"></a>-->
 
@@ -59,20 +59,20 @@
           <li><a href="{% url 'services' %}" class="{% if request.path == '/services/' %} active {% endif %}">Services</a></li>
           <li><a href="{% url 'team' %}" class="{% if request.path == '/team/' %} active {% endif %}">Team</a></li>
           <li><a href="{% url 'portfolio' %}" class="{% if request.path == '/portfolio/' %} active {% endif %}">Portfolio</a></li>
-          <li><a href="{% url 'pricing' %}" class="{% if request.path == '/pricing/' %} active {% endif %}">Pricing</a></li>
-          <li><a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %} active {% endif %}">Blog</a></li>
           <li><a href="{% url 'testimonial' %}" class="{% if request.path == '/testimonial/' %} active {% endif %}">Testimonial</a></li>
           <li><a href="{% url 'contact' %}" class="{% if request.path == '/contact' %} active {% endif %}">Contact</a></li>
+          <li><a href="{% url 'register' %}" class="{% if request.path == '/register/' %} active {% endif %}">Register</a></li>
+          <li><a href="{% url 'login' %}" class="{% if request.path == '/login/' %} active {% endif %}">Login</a></li>
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
       <div class="header-social-links d-flex">
-        <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="twitter"><i class="bu bi-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="facebook"><i class="bu bi-facebook"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="instagram"><i class="bu bi-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
       </div>
 
     </div>
@@ -215,11 +215,11 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
