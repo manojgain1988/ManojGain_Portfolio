@@ -9,11 +9,13 @@ urlpatterns = [
     path('services/', views.Services , name='services'),
     path('team/', views.Team , name='team'),
     path('portfolio/', views.Portfolio , name='portfolio'),
-    path('testimonial/', views.Testimonial , name='testimonial'),
+    path('profile/', views.Profile , name='profile'),
     path('contact/', views.Contact , name='contact'),
     
     
-    path('login/', views.Login , name='login'),
-    path('register/', views.Register , name='register'),
+    path('login/', views.AuthLogin , name='login'),
+    path('register/', views.AuthRegister , name='register'),
+    path('forgot/', views.Forgotpassword , name='forgot'),
+    path('logout/', views.UserLogout , name='logout'),
    
 ]

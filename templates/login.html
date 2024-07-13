@@ -27,25 +27,40 @@
 
     <!-- ======= login Section ======= -->
     <section id="login" class="login">
-      {% comment %} <div class="container" data-aos="fade-up"> {% endcomment %}
+     <div class="container" data-aos="fade-up">
 
         <form action="{% url 'login' %}" method="POST" class="col-md-6 m-auto">
-          {% csrf_token %}
+         {% csrf_token %}
           <div class="section-title">
             <h3>Login Your Account</h3>
           </div>
+
+          {% for message in messages %}
+              <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message }}
+              </div>
+          {% endfor %}
+
+          
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="text" class="form-control" name="email" id="email" placeholder="Your Email">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Your Password</label>
             <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
           </div>
-          <button type="submit" class="btn btn-success  w-100 mb-5">Login</button>
+          <p>Forgetpassword : <a href="{% url 'forgot' %}" class="text-success">Forgot Password</a></p>
+          <button type="submit" class="btn btn-success w-100 mb-5">Login</button>
+          
+          <p>Don't have an account, Please : <a href="{% url 'register' %}" class="text-success">Register Now</a></p>
+         
         </form>
         
-      
+        
 
     {% endblock content %}
 
