@@ -11,63 +11,63 @@
     {% block content %}
 
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+      <!-- ======= Breadcrumbs ======= -->
+      <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Registration</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Register</li>
-          </ol>
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Registration</h2>
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li>Register</li>
+            </ol>
+          </div>
+
         </div>
+      </section><!-- End Breadcrumbs -->
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+      <!-- ======= login Section ======= -->
+      <section id="register" class="register">
+        <div class="container" data-aos="fade-up">
 
-    <!-- ======= login Section ======= -->
-    <section id="register" class="register">
-      <div class="container" data-aos="fade-up">
-
-        <form action="{% url 'register' %}" method="POST" class="col-md-6 m-auto">
-          {% csrf_token %}
-          <div class="section-title">
-            <h3>Register Your Account</h3>
-          </div>
+          <form action="{% url 'register' %}" method="POST" class="col-md-6 m-auto">
+            {% csrf_token %}
+            <div class="section-title">
+              <h3>Register Your Account</h3>
+            </div>
 
 
-          {% for message in messages %}
-              <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                {{ message }}
-              </div>
-         {% endfor %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{ message }}
+                </div>
+          {% endfor %}
 
 
-          <div class="mb-3">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Your Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
-          </div>
-          <div class="mb-3">
-            <label for="confirm_password" class="form-label">Confirm_Password</label>
-            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm_Password">
-          </div>
-          <button type="submit" class="btn btn-success  w-100 mb-5">Register</button>
-          {% comment %} <p>Already have an account, Please : <a href="{% url 'login' %}" class="text-success">Login Now</a></p> {% endcomment %}
-        </form>
-        
-      
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Your Password</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
+            </div>
+            <div class="mb-3">
+              <label for="confirm_password" class="form-label">Confirm_Password</label>
+              <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm_Password">
+            </div>
+            <button type="submit" class="btn btn-success  w-100 mb-5">Register</button>
+            {% comment %} <p>Already have an account, Please : <a href="{% url 'login' %}" class="text-success">Login Now</a></p> {% endcomment %}
+          </form>
+          
+        </section>
 
     {% endblock content %}
 

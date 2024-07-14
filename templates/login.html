@@ -10,56 +10,56 @@
     {% block content %}
 
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+          <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Login</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Login</li>
-          </ol>
-        </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h2>Login</h2>
+              <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Login</li>
+              </ol>
+            </div>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= login Section ======= -->
-    <section id="login" class="login">
-     <div class="container" data-aos="fade-up">
-
-        <form action="{% url 'login' %}" method="POST" class="col-md-6 m-auto">
-         {% csrf_token %}
-          <div class="section-title">
-            <h3>Login Your Account</h3>
           </div>
+        </section><!-- End Breadcrumbs -->
 
-          {% for message in messages %}
-              <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                {{ message }}
+        <!-- ======= login Section ======= -->
+        <section id="login" class="login">
+        <div class="container" data-aos="fade-up">
+
+            <form action="{% url 'login' %}" method="POST" class="col-md-6 m-auto">
+            {% csrf_token %}
+              <div class="section-title">
+                <h3>Login Your Account</h3>
               </div>
-          {% endfor %}
 
-          
-          <div class="mb-3">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Your Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
-          </div>
-          <p>Forgetpassword : <a href="{% url 'forgot' %}" class="text-success">Forgot Password</a></p>
-          <button type="submit" class="btn btn-success w-100 mb-5">Login</button>
-          
-          <p>Don't have an account, Please : <a href="{% url 'register' %}" class="text-success">Register Now</a></p>
-         
-        </form>
-        
+              {% for message in messages %}
+                  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ message }}
+                  </div>
+              {% endfor %}
+
+              
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Your Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
+              </div>
+              <p>Forgetpassword : <a href="{% url 'forgot' %}" class="text-success">Forgot Password</a></p>
+              <button type="submit" class="btn btn-success w-100 mb-5">Login</button>
+              
+              <p>Don't have an account, Please : <a href="{% url 'register' %}" class="text-success">Register Now</a></p>
+            
+            </form>
+          </section> 
         
 
     {% endblock content %}

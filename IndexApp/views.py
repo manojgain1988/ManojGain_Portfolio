@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from IndexApp.models import ContactForm
+from IndexApp.models import Slider,About,Service,Portfolio,Client,TeamAbout,ContactMessage,ContactForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -7,37 +7,63 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def Index(request):
-    context={  
+    slidersata = Slider.objects.all()
+    aboutdata = About.objects.all()
+    servicedata = Service.objects.all()
+    portfoliodata = Portfolio.objects.all()
+    Clientdata = Client.objects.all()
+    context={ 
+        'slidersata' : slidersata, 
+        'aboutdata' : aboutdata, 
+        'servicedata' : servicedata, 
+        'portfoliodata' : portfoliodata, 
+        'Clientdata' : Clientdata, 
     }
     return render(request,'index.html', context)
 
-def About(request):
-    context={  
+def Abouts(request):
+    Clientdata = Client.objects.all()
+    aboutdata = About.objects.all()
+    teamAbout = TeamAbout.objects.all()
+    context={
+        'Clientdata' : Clientdata,
+         'aboutdata' : aboutdata,  
+         'teamAbout' : teamAbout,  
     }
     return render(request,'about.html', context)
 
 def Services(request):
-    context={  
+    Clientdata = Client.objects.all()
+    context={
+              'Clientdata' : Clientdata,   
     }
     return render(request,'services.html', context)
 
 def Team(request):
-    context={  
+    Clientdata = Client.objects.all()
+    context={
+        'Clientdata' : Clientdata,  
     }
     return render(request,'team.html', context)
 
-def Portfolio(request):
-    context={  
+def Portfolios(request):
+    Clientdata = Client.objects.all()
+    context={
+        'Clientdata' : Clientdata,  
     }
     return render(request,'portfolio.html', context)
 
 
 def Profile(request):
-    context={  
+    Clientdata = Client.objects.all()
+    context={
+        'Clientdata' : Clientdata,  
     }
     return render(request,'profile.html', context)
 
 def Contact(request):
+    contactdata =ContactMessage.objects.all()
+    Clientdata = Client.objects.all()
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -47,12 +73,15 @@ def Contact(request):
         obj=ContactForm(name=name,email=email,subject=subject,message=message)
         obj.save()
         
-    context={  
+    context={
+        'Clientdata' : Clientdata,
+        'contactdata' : contactdata,        
     }
     return render(request,'contact.html', context)
 
 
 def AuthRegister(request):
+    Clientdata = Client.objects.all()
     if request.method == "POST":
         username = request.POST['name']
         email = request.POST['email']
@@ -72,13 +101,18 @@ def AuthRegister(request):
                 messages.success(request, 'Your Register Successfully!')
                 return redirect('login')
         else:
-            messages.error(request, 'Your Passpord or Comfirm_Password  are not Same!')         
-    return render(request,'register.html')
+            messages.error(request, 'Your Passpord or Comfirm_Password  are not Same!')
+            
+    context={
+        'Clientdata' : Clientdata,    
+    }         
+    return render(request,'register.html',context)
 
 
 
 
 def AuthLogin(request):
+    Clientdata = Client.objects.all()
     if request.method == "POST":
         name = request.POST['name']
         password = request.POST['password']
@@ -92,7 +126,11 @@ def AuthLogin(request):
         else:
             messages.error(request, 'Your Email or Password  are not Match!')
             return redirect('login')
-    return render(request,'login.html')
+        
+    context={
+        'Clientdata' : Clientdata,    
+    }
+    return render(request,'login.html',context)
  
 
 
